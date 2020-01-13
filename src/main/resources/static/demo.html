@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#but").click(function () {
+                $.ajax({
+                    url:'getip',
+                    data:{username:$("#username").val(),password:$("#password").val()},
+                    success:function (data) {
+                        if (data.success){
+                            alert("注册成功"+"查收邮件")
+                        }else {
+                            alert("24小时候再试")
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    用户名<input id="username" name="username">
+    密码<input id="password" name="password">
+    <button id="but">提交</button>
+</body>
+</html>
